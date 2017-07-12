@@ -1,0 +1,20 @@
+12 of July, 2017
+Genone just shared the bacteria DNA reads with us today. I've accessed the FTP sever using FileZilla and I've downloaded the files.
+They are in bioma local computer:
+/media/bioma/204ACB954ACB65DE/A1_1.fq.gz
+/media/bioma/204ACB954ACB65DE/A1_2.fq.gz
+/media/bioma/204ACB954ACB65DE/RawData_MD5.txt
+
+And the report from Genone file:///home/bioma/alfa-terpineol/C101HW17041128_sequence_report/report/C101HW17041128_sequence_Report.html#Explanation of Sequencing Data Related
+
+The counting of raw reads were:
+
+21199016 A1_1.fq
+21199016 A1_2.fq
+
+Then, I need to clean the adaptors from the sequences:
+java -jar /home/bioma/Downloads/trinityrnaseq_r20140717/trinity-plugins/Trimmomatic-0.32/trimmomatic.jar PE -threads 30 -phred33 /home/bioma/alfa-terpineol/A1_1.fq /home/bioma/alfa-terpineol/A1_2.fq /home/bioma/alfa-terpineol/A1_1.fq.forward_paired.fastq.gz /home/bioma/alfa-terpineol/A1_1.forward_unpaired.fastq.gz /home/bioma/alfa-terpineol/A1_2.reverse.paired.gz /home/bioma/alfa-terpineol/A1_2.reverse.unpaired.gz ILLUMINACLIP:/home/bioma/alfa-terpineol/barcodes:2:30:10 LEADING:10 TRAILING:10 SLIDINGWINDOW:4:2 MINLEN:65
+
+
+
+
