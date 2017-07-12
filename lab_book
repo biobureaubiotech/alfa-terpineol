@@ -15,6 +15,13 @@ The counting of raw reads were:
 Then, I need to clean the adaptors from the sequences:
 java -jar /home/bioma/Downloads/trinityrnaseq_r20140717/trinity-plugins/Trimmomatic-0.32/trimmomatic.jar PE -threads 30 -phred33 /home/bioma/alfa-terpineol/A1_1.fq /home/bioma/alfa-terpineol/A1_2.fq /home/bioma/alfa-terpineol/A1_1.fq.forward_paired.fastq.gz /home/bioma/alfa-terpineol/A1_1.forward_unpaired.fastq.gz /home/bioma/alfa-terpineol/A1_2.reverse.paired.gz /home/bioma/alfa-terpineol/A1_2.reverse.unpaired.gz ILLUMINACLIP:/home/bioma/alfa-terpineol/barcodes:2:30:10 LEADING:10 TRAILING:10 SLIDINGWINDOW:4:2 MINLEN:65
 
+Then, I run fastqc in the trimmed files and they show to be free of adaptors and of good quality. (fastqc files are at /home/bioma/alfa-terpineol)
+
+Counting
+5284987 A1_1.forward_paired.fq 
+5284987 A1_2.reverse_paired.fq
+
+
 
 
 
