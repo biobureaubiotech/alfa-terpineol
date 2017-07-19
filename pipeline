@@ -12,6 +12,12 @@ fastqc A1_2.reverse_paired.fq
 #commands for spades
 python spades.py -1 A1_1.forward_paired.fq -2 A1_2.reverse_paired.fq
 #I've run both assemblers in BioMA's local computer. Both did not used more than 10Gb of memory RAM.
-#After the assembly, I've run the script 
+#After the assembly, I've run the script Prodigal for gene and protein prediction (http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-11-119)
+./prodigal
+#then I counted the size of proteins
+perl /home/bioma/scripts/conta_tamanho_multifasta.pl
+#then I run BUSCO v3 using the database for proteobacteria
+run_BUSCO.py -i genome.scf.fasta -m genome -c 4 -f -l ./proteobacteria_odb9/ -o BUSCOv3.sphin
+#series of BLAST analysis and KEGG.
 
 
