@@ -21,6 +21,141 @@ Counting
 5284987 A1_1.forward_paired.fq 
 5284987 A1_2.reverse_paired.fq
 
+After having the reads clean I used two assemblers for the assembly test: (i) spades and (ii) masurca. Bellow you can find the
+statistics for both assembly results:
+
+File: /home/bioma/alfa-terpineol/spades/assembly.spades.stats
+
+---------------- Information for assembly 'scaffolds.spades.fasta' ----------------
+
+
+                                         Number of scaffolds        306
+                                     Total size of scaffolds    5669148
+                                            Longest scaffold     563490
+                                           Shortest scaffold        128
+                                 Number of scaffolds > 1K nt         48  15.7%
+                                Number of scaffolds > 10K nt         37  12.1%
+                               Number of scaffolds > 100K nt         18   5.9%
+                                 Number of scaffolds > 1M nt          0   0.0%
+                                Number of scaffolds > 10M nt          0   0.0%
+                                          Mean scaffold size      18527
+                                        Median scaffold size        454
+                                         N50 scaffold length     199910
+                                          L50 scaffold count          8
+                                                 scaffold %A      17.97
+                                                 scaffold %C      31.84
+                                                 scaffold %G      32.10
+                                                 scaffold %T      18.08
+                                                 scaffold %N       0.01
+                                         scaffold %non-ACGTN       0.00
+                             Number of scaffold non-ACGTN nt          0
+
+                Percentage of assembly in scaffolded contigs      14.2%
+              Percentage of assembly in unscaffolded contigs      85.8%
+                      Average number of contigs per scaffold        1.0
+Average length of break (>25 Ns) between contigs in scaffold        100
+
+                                           Number of contigs        310
+                              Number of contigs in scaffolds          8
+                          Number of contigs not in scaffolds        302
+                                       Total size of contigs    5668748
+                                              Longest contig     563490
+                                             Shortest contig        128
+                                   Number of contigs > 1K nt         51  16.5%
+                                  Number of contigs > 10K nt         38  12.3%
+                                 Number of contigs > 100K nt         18   5.8%
+                                   Number of contigs > 1M nt          0   0.0%
+                                  Number of contigs > 10M nt          0   0.0%
+                                            Mean contig size      18286
+                                          Median contig size        455
+                                           N50 contig length     199910
+                                            L50 contig count          8
+                                                   contig %A      17.98
+                                                   contig %C      31.84
+                                                   contig %G      32.10
+                                                   contig %T      18.09
+                                                   contig %N       0.00
+                                           contig %non-ACGTN       0.00
+                               Number of contig non-ACGTN nt          0
+
+
+
+And stats results for masurca:
+
+File: /home/bioma/alfa-terpineol/masurce/genome.scf.masurca.stats
+
+---------------- Information for assembly 'genome.scf.mausrca.fasta' ----------------
+
+
+                                         Number of scaffolds        116
+                                     Total size of scaffolds    5568477
+                                            Longest scaffold     398272
+                                           Shortest scaffold        304
+                                 Number of scaffolds > 1K nt         84  72.4%
+                                Number of scaffolds > 10K nt         59  50.9%
+                               Number of scaffolds > 100K nt         22  19.0%
+                                 Number of scaffolds > 1M nt          0   0.0%
+                                Number of scaffolds > 10M nt          0   0.0%
+                                          Mean scaffold size      48004
+                                        Median scaffold size      10225
+                                         N50 scaffold length     155525
+                                          L50 scaffold count         13
+                                                 scaffold %A      17.95
+                                                 scaffold %C      32.15
+                                                 scaffold %G      31.98
+                                                 scaffold %T      17.91
+                                                 scaffold %N       0.00
+                                         scaffold %non-ACGTN       0.00
+                             Number of scaffold non-ACGTN nt          0
+
+                Percentage of assembly in scaffolded contigs       0.0%
+              Percentage of assembly in unscaffolded contigs     100.0%
+                      Average number of contigs per scaffold        1.0
+Average length of break (>25 Ns) between contigs in scaffold          0
+
+                                           Number of contigs        116
+                              Number of contigs in scaffolds          0
+                          Number of contigs not in scaffolds        116
+                                       Total size of contigs    5568477
+                                              Longest contig     398272
+                                             Shortest contig        304
+                                   Number of contigs > 1K nt         84  72.4%
+                                  Number of contigs > 10K nt         59  50.9%
+                                 Number of contigs > 100K nt         22  19.0%
+                                   Number of contigs > 1M nt          0   0.0%
+                                  Number of contigs > 10M nt          0   0.0%
+                                            Mean contig size      48004
+                                          Median contig size      10225
+                                           N50 contig length     155525
+                                            L50 contig count         13
+                                                   contig %A      17.95
+                                                   contig %C      32.15
+                                                   contig %G      31.98
+                                                   contig %T      17.91
+                                                   contig %N       0.00
+                                           contig %non-ACGTN       0.00
+                               Number of contig non-ACGTN nt          0
+
+
+After that, I've predicted genes and proteins for both assemblies with Prodigal (http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-11-119) 
+Proteins for the spades assembly: /home/bioma/alfa-terpineol/spades/spades.proteins.fasta
+Proteins for the masurca assembly: /home/bioma/alfa-terpineol/masurca.proteins.fasta
+
+There were 5427 proteins predicted for the spades-assembly and 5408 proteins predicted for the masurca-assembly. After
+analizing the average size for each, I've made an arbitrery decision of using the masurca genome assembly for further analysis.
+The BUSCO analysis for this (masurca) set of proteins shows its a very complete set:
+
+BUSCO Results masurca proteins:
+INFO    C:96.0%[S:95.5%,D:0.5%],F:0.5%,M:3.5%,n:221
+INFO    212 Complete BUSCOs (C)
+INFO    211 Complete and single-copy BUSCOs (S)
+INFO    1 Complete and duplicated BUSCOs (D)
+INFO    1 Fragmented BUSCOs (F)
+INFO    8 Missing BUSCOs (M)
+INFO    221 Total BUSCO groups searched
+
+
+
 
 
 
