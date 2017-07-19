@@ -5,3 +5,13 @@ wc -l A1_2.fq
 java -jar /usr/share/java/trimmomatic.jar PE -threads 30 -phred33 /home/bioma/alfa-terpineol/A1_1.fq /home/bioma/alfa-terpineol/A1_2.fq /home/bioma/alfa-terpineol/A1_1.forward_paired.fq.gz /home/bioma/alfa-terpineol/A1_1.forward_unpaired.fastq.gz /home/bioma/alfa-terpineol/A1_2.reverse_paired.fq.gz /home/bioma/alfa-terpineol/A1_2.reverse.unpaired.gz ILLUMINACLIP:/home/bioma/alfa-terpineol/barcodes:2:30:10 LEADING:10 TRAILING:10 SLIDINGWINDOW:4:2 MINLEN:65
 fastqc A1_1.forward_paired.fq
 fastqc A1_2.reverse_paired.fq
+#then I've run two assemblers: (i) spades and (ii) masurca
+./masurca config.file.masurca.sphin
+# the configure file config.file.masurca.sphin is uploaded in this github project
+./assemble.sh
+#commands for spades
+python spades.py -1 A1_1.forward_paired.fq -2 A1_2.reverse_paired.fq
+#I've run both assemblers in BioMA's local computer. Both did not used more than 10Gb of memory RAM.
+#After the assembly, I've run the script 
+
+
