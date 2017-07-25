@@ -154,6 +154,12 @@ INFO    1 Fragmented BUSCOs (F)
 INFO    8 Missing BUSCOs (M)
 INFO    221 Total BUSCO groups searched
 
+25th July, 2017
+
+We have run a series of annotationa analysis on the masurca-predicted-proteins to characterize them and to be able to chose a few
+for further bioinformatic analysis (3D structure, docking).
+
+- All sequences generated are in the BioMA local computer, but also were uploaded to the S3 amazon server.
 
 
 
