@@ -163,7 +163,10 @@ for further bioinformatic analysis (3D structure, docking).
 the S3 amazon server (s3://s3biobureau01/alfa-terpineol/)
 
 
+1rst of August, 2017.
 
+Blast with xml output and only one HSPs per sequence:
+/home/bioma/scripts/ncbi-blast-2.5.0+/bin/./blastp -query 282-masurca.proteins.fasta -db /home/bioma/scripts/db/nr -evalue 1e-05 -num_threads 6 -outfmt 5 -max_hsps 1 -out 282-masurca.prot.NR.blastp.xml
 
 
 
