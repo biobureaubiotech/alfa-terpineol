@@ -169,4 +169,25 @@ Blast with xml output and only one HSPs per sequence:
 /home/bioma/scripts/ncbi-blast-2.5.0+/bin/./blastp -query 282-masurca.proteins.fasta -db /home/bioma/scripts/db/nr -evalue 1e-05 -num_threads 6 -outfmt 5 -max_hsps 1 -out 282-masurca.prot.NR.blastp.xml
 
 
+7th of august, 2017
+
+Today Luana and I (marcela) are going to predict some proteins in a funghi genome that is interesting for Bicas. 
+Details...
+
+...
+
+Where is the funghi genome?
+https://www.ncbi.nlm.nih.gov/genome/?term=txid27357[Organism:noexp]
+
+We downloaded and are working in the folder: /home/bioma/alfa-terpineol/bicas_enzymes/
+
+bioma@bioma-XPS-8300:~/alfa-terpineol/bicas_enzymes$ gunzip GCA_001593745.1_ASM159374v1_genomic.fna.gz
+
+
+
+
+
+
+
+
 
